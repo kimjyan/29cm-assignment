@@ -16,6 +16,9 @@
 		F7C3994F2A38C3F200AF7E44 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C3994E2A38C3F200AF7E44 /* MainTabBarViewController.swift */; };
 		F7C399512A38C43E00AF7E44 /* SearchRepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C399502A38C43E00AF7E44 /* SearchRepoListViewController.swift */; };
 		F7C399532A38C47100AF7E44 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C399522A38C47100AF7E44 /* ProfileViewController.swift */; };
+		F7C399562A38D39600AF7E44 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C399552A38D39600AF7E44 /* NetworkProvider.swift */; };
+		F7C399592A38D45D00AF7E44 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = F7C399582A38D45D00AF7E44 /* Moya */; };
+		F7C3995B2A38D45D00AF7E44 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F7C3995A2A38D45D00AF7E44 /* RxMoya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,7 @@
 		F7C3994E2A38C3F200AF7E44 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		F7C399502A38C43E00AF7E44 /* SearchRepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoListViewController.swift; sourceTree = "<group>"; };
 		F7C399522A38C47100AF7E44 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F7C399552A38D39600AF7E44 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C3995B2A38D45D00AF7E44 /* RxMoya in Frameworks */,
+				F7C399592A38D45D00AF7E44 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +112,7 @@
 				F7C3994E2A38C3F200AF7E44 /* MainTabBarViewController.swift */,
 				F7C399502A38C43E00AF7E44 /* SearchRepoListViewController.swift */,
 				F7C399522A38C47100AF7E44 /* ProfileViewController.swift */,
+				F7C399552A38D39600AF7E44 /* NetworkProvider.swift */,
 			);
 			path = assignment;
 			sourceTree = "<group>";
@@ -143,6 +150,10 @@
 			dependencies = (
 			);
 			name = assignment;
+			packageProductDependencies = (
+				F7C399582A38D45D00AF7E44 /* Moya */,
+				F7C3995A2A38D45D00AF7E44 /* RxMoya */,
+			);
 			productName = assignment;
 			productReference = F70EBB132A38BDBB00F83BE0 /* assignment.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +226,9 @@
 				Base,
 			);
 			mainGroup = F70EBB0A2A38BDBB00F83BE0;
+			packageReferences = (
+				F7C399572A38D45D00AF7E44 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = F70EBB142A38BDBB00F83BE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,6 +275,7 @@
 				F7C3994F2A38C3F200AF7E44 /* MainTabBarViewController.swift in Sources */,
 				F7C399532A38C47100AF7E44 /* ProfileViewController.swift in Sources */,
 				F7C399512A38C43E00AF7E44 /* SearchRepoListViewController.swift in Sources */,
+				F7C399562A38D39600AF7E44 /* NetworkProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +609,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F7C399572A38D45D00AF7E44 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F7C399582A38D45D00AF7E44 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C399572A38D45D00AF7E44 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		F7C3995A2A38D45D00AF7E44 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C399572A38D45D00AF7E44 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F70EBB0B2A38BDBB00F83BE0 /* Project object */;
 }
