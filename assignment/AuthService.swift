@@ -32,8 +32,8 @@ protocol AuthServiceType {
 }
 
 final class AuthService: AuthServiceType {
-    fileprivate let clientID = "d6d8607707c651415c15"
-    fileprivate let clientSecret = "b617c4921b42ec4e59268e09a91d686ab0fd6904"
+    fileprivate let clientID = "4e9ab13f61d594eef6f7"
+    fileprivate let clientSecret = "48cb526482d34ab37f13b1eb796e353b4013d2c0"
     
     fileprivate var currentViewController: UIViewController?
     fileprivate let callbackSubject = PublishSubject<String>()
