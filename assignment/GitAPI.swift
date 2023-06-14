@@ -14,7 +14,7 @@ enum GitAPI {
 
 extension GitAPI: Moya.TargetType {
     var baseURL: URL {
-        return URL(string: "https://github.com")!
+        return URL(string: "https://api.github.com")!
     }
     
     var path: String {
@@ -37,6 +37,6 @@ extension GitAPI: Moya.TargetType {
     }
     
     var headers: [String : String]? {
-        return ["Accept": "application/json"]
+        return nil
     }
 }
