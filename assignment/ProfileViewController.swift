@@ -11,6 +11,7 @@ final class ProfilViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         title = "Profile"
+        view.backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {

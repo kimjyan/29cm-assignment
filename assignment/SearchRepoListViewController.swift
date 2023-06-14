@@ -8,12 +8,6 @@
 import UIKit
 
 final class SearchRepoListViewController: UIViewController {
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "SearchRepoListViewController"
-        return label
-    }()
-    
     init() {
         super.init(nibName: nil, bundle: nil)
         title = "List"
@@ -22,8 +16,6 @@ final class SearchRepoListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(titleLabel)
-        titleLabel.frame = CGRect(origin: .zero, size: CGSize(width: 100, height: 100))
     }
     
     required init?(coder: NSCoder) {

@@ -12,6 +12,9 @@ final class MainTabBarViewController: UITabBarController {
          profileViewController: ProfilViewController) {
         super.init(nibName: nil, bundle: nil)
         viewControllers = [searchRepoViewListViewController, profileViewController]
+            .map { viewController -> UINavigationController in
+                UINavigationController(rootViewController: viewController)
+            }
     }
     
     override func viewDidLoad() {
