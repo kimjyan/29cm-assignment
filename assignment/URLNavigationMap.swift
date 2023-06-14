@@ -13,7 +13,7 @@ final class URLNavigatorMap {
         navigator: NavigatorProtocol,
         authService: AuthServiceType
     ) {
-        navigator.handle("callback://login") { url, values, context in
+        navigator.handle("assignment://login") { url, values, context in
             guard let code = url.queryParameters["code"] else { return false }
             authService.callback(code: code)
             return true
