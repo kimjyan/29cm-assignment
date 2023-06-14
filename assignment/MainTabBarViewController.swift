@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import RxSwift
 
 final class MainTabBarViewController: UITabBarController {
-    init(searchRepoViewListViewController: SearchRepoListViewController,
-         profileViewController: ProfilViewController) {
+    fileprivate let disposeBag = DisposeBag()
+    fileprivate let authService: AuthServiceType
+    init(
+        authService: AuthServiceType,
+        searchRepoViewListViewController: SearchRepoListViewController,
+        profileViewController: ProfilViewController
+    ) {
+        self.authService = authService
         super.init(nibName: nil, bundle: nil)
         viewControllers = [searchRepoViewListViewController, profileViewController]
             .map { viewController -> UINavigationController in
