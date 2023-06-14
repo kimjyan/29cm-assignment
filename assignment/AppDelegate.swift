@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.rootViewController = MainTabBarViewController(
                 authService: authService,
                 searchRepoViewListViewController: SearchRepoListViewController(authService: authService),
-                profileViewController: ProfilViewController()
+                profileViewController: ProfilViewController(authService: authService)
             )
             window.makeKeyAndVisible()
             return window

@@ -14,7 +14,7 @@ struct AuthenicatedUser: Codable {
     let businessPlus: Bool?
     let collaborators: Int?
     let company: String?
-    let createdAt: Date
+    let createdAt: String
     let diskUsage: Int?
     let email: String?
     let eventsURL: String
@@ -43,7 +43,7 @@ struct AuthenicatedUser: Codable {
     let twitterUsername: String?
     let twoFactorAuthentication: Bool?
     let type: String
-    let updatedAt: Date
+    let updatedAt: String
     let url: String
 
     enum CodingKeys: String, CodingKey {
