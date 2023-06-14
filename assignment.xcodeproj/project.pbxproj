@@ -19,6 +19,11 @@
 		F7C399562A38D39600AF7E44 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C399552A38D39600AF7E44 /* NetworkProvider.swift */; };
 		F7C399592A38D45D00AF7E44 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = F7C399582A38D45D00AF7E44 /* Moya */; };
 		F7C3995B2A38D45D00AF7E44 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F7C3995A2A38D45D00AF7E44 /* RxMoya */; };
+		F7C3995F2A3A0A1B00AF7E44 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C3995C2A3A0A1B00AF7E44 /* AuthService.swift */; };
+		F7C399602A3A0A1B00AF7E44 /* URLNavigationMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C3995D2A3A0A1B00AF7E44 /* URLNavigationMap.swift */; };
+		F7C399612A3A0A1B00AF7E44 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C3995E2A3A0A1B00AF7E44 /* AccessToken.swift */; };
+		F7C399642A3A0A5D00AF7E44 /* URLNavigator in Frameworks */ = {isa = PBXBuildFile; productRef = F7C399632A3A0A5D00AF7E44 /* URLNavigator */; };
+		F7C399672A3A0BBC00AF7E44 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7C399662A3A0BBC00AF7E44 /* KeychainSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,9 @@
 		F7C399502A38C43E00AF7E44 /* SearchRepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoListViewController.swift; sourceTree = "<group>"; };
 		F7C399522A38C47100AF7E44 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F7C399552A38D39600AF7E44 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		F7C3995C2A3A0A1B00AF7E44 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		F7C3995D2A3A0A1B00AF7E44 /* URLNavigationMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLNavigationMap.swift; sourceTree = "<group>"; };
+		F7C3995E2A3A0A1B00AF7E44 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C3995B2A38D45D00AF7E44 /* RxMoya in Frameworks */,
+				F7C399642A3A0A5D00AF7E44 /* URLNavigator in Frameworks */,
+				F7C399672A3A0BBC00AF7E44 /* KeychainSwift in Frameworks */,
 				F7C399592A38D45D00AF7E44 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +123,9 @@
 				F7C399502A38C43E00AF7E44 /* SearchRepoListViewController.swift */,
 				F7C399522A38C47100AF7E44 /* ProfileViewController.swift */,
 				F7C399552A38D39600AF7E44 /* NetworkProvider.swift */,
+				F7C3995E2A3A0A1B00AF7E44 /* AccessToken.swift */,
+				F7C3995C2A3A0A1B00AF7E44 /* AuthService.swift */,
+				F7C3995D2A3A0A1B00AF7E44 /* URLNavigationMap.swift */,
 			);
 			path = assignment;
 			sourceTree = "<group>";
@@ -153,6 +166,8 @@
 			packageProductDependencies = (
 				F7C399582A38D45D00AF7E44 /* Moya */,
 				F7C3995A2A38D45D00AF7E44 /* RxMoya */,
+				F7C399632A3A0A5D00AF7E44 /* URLNavigator */,
+				F7C399662A3A0BBC00AF7E44 /* KeychainSwift */,
 			);
 			productName = assignment;
 			productReference = F70EBB132A38BDBB00F83BE0 /* assignment.app */;
@@ -228,6 +243,8 @@
 			mainGroup = F70EBB0A2A38BDBB00F83BE0;
 			packageReferences = (
 				F7C399572A38D45D00AF7E44 /* XCRemoteSwiftPackageReference "Moya" */,
+				F7C399622A3A0A5D00AF7E44 /* XCRemoteSwiftPackageReference "URLNavigator" */,
+				F7C399652A3A0BBC00AF7E44 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = F70EBB142A38BDBB00F83BE0 /* Products */;
 			projectDirPath = "";
@@ -272,10 +289,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F70EBB172A38BDBB00F83BE0 /* AppDelegate.swift in Sources */,
+				F7C399602A3A0A1B00AF7E44 /* URLNavigationMap.swift in Sources */,
 				F7C3994F2A38C3F200AF7E44 /* MainTabBarViewController.swift in Sources */,
 				F7C399532A38C47100AF7E44 /* ProfileViewController.swift in Sources */,
+				F7C3995F2A3A0A1B00AF7E44 /* AuthService.swift in Sources */,
 				F7C399512A38C43E00AF7E44 /* SearchRepoListViewController.swift in Sources */,
 				F7C399562A38D39600AF7E44 /* NetworkProvider.swift in Sources */,
+				F7C399612A3A0A1B00AF7E44 /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +639,22 @@
 				minimumVersion = 13.0.0;
 			};
 		};
+		F7C399622A3A0A5D00AF7E44 /* XCRemoteSwiftPackageReference "URLNavigator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/URLNavigator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		F7C399652A3A0BBC00AF7E44 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 20.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -631,6 +667,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F7C399572A38D45D00AF7E44 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		F7C399632A3A0A5D00AF7E44 /* URLNavigator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C399622A3A0A5D00AF7E44 /* XCRemoteSwiftPackageReference "URLNavigator" */;
+			productName = URLNavigator;
+		};
+		F7C399662A3A0BBC00AF7E44 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C399652A3A0BBC00AF7E44 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
