@@ -28,6 +28,9 @@
 		F7C3996B2A3A25A100AF7E44 /* AuthenicatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C3996A2A3A25A100AF7E44 /* AuthenicatedUser.swift */; };
 		F7C3996D2A3A268200AF7E44 /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C3996C2A3A268200AF7E44 /* AuthPlugin.swift */; };
 		F7C399722A3DC57D00AF7E44 /* UIColor + 29cm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C399712A3DC57D00AF7E44 /* UIColor + 29cm.swift */; };
+		F7C399762A3DCC3A00AF7E44 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C399752A3DCC3A00AF7E44 /* ProfileHeaderView.swift */; };
+		F7C399792A3DF2CD00AF7E44 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F7C399782A3DF2CD00AF7E44 /* SnapKit */; };
+		F7C3997B2A3DF57700AF7E44 /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C3997A2A3DF57700AF7E44 /* UIViewPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,8 @@
 		F7C3996A2A3A25A100AF7E44 /* AuthenicatedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenicatedUser.swift; sourceTree = "<group>"; };
 		F7C3996C2A3A268200AF7E44 /* AuthPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPlugin.swift; sourceTree = "<group>"; };
 		F7C399712A3DC57D00AF7E44 /* UIColor + 29cm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + 29cm.swift"; sourceTree = "<group>"; };
+		F7C399752A3DCC3A00AF7E44 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		F7C3997A2A3DF57700AF7E44 /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +85,7 @@
 				F7C399642A3A0A5D00AF7E44 /* URLNavigator in Frameworks */,
 				F7C399672A3A0BBC00AF7E44 /* KeychainSwift in Frameworks */,
 				F7C399592A38D45D00AF7E44 /* Moya in Frameworks */,
+				F7C399792A3DF2CD00AF7E44 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +176,7 @@
 				F7C399732A3DCB1300AF7E44 /* ViewControllers */,
 				F7C399742A3DCB8500AF7E44 /* Views */,
 				F7C399712A3DC57D00AF7E44 /* UIColor + 29cm.swift */,
+				F7C3997A2A3DF57700AF7E44 /* UIViewPreview.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -187,6 +194,7 @@
 		F7C399742A3DCB8500AF7E44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F7C399752A3DCC3A00AF7E44 /* ProfileHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +220,7 @@
 				F7C3995A2A38D45D00AF7E44 /* RxMoya */,
 				F7C399632A3A0A5D00AF7E44 /* URLNavigator */,
 				F7C399662A3A0BBC00AF7E44 /* KeychainSwift */,
+				F7C399782A3DF2CD00AF7E44 /* SnapKit */,
 			);
 			productName = assignment;
 			productReference = F70EBB132A38BDBB00F83BE0 /* assignment.app */;
@@ -289,6 +298,7 @@
 				F7C399572A38D45D00AF7E44 /* XCRemoteSwiftPackageReference "Moya" */,
 				F7C399622A3A0A5D00AF7E44 /* XCRemoteSwiftPackageReference "URLNavigator" */,
 				F7C399652A3A0BBC00AF7E44 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				F7C399772A3DF2CD00AF7E44 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = F70EBB142A38BDBB00F83BE0 /* Products */;
 			projectDirPath = "";
@@ -338,10 +348,12 @@
 				F7C3996B2A3A25A100AF7E44 /* AuthenicatedUser.swift in Sources */,
 				F7C3994F2A38C3F200AF7E44 /* MainTabBarViewController.swift in Sources */,
 				F7C399532A38C47100AF7E44 /* ProfileViewController.swift in Sources */,
+				F7C399762A3DCC3A00AF7E44 /* ProfileHeaderView.swift in Sources */,
 				F7C399722A3DC57D00AF7E44 /* UIColor + 29cm.swift in Sources */,
 				F7C3996D2A3A268200AF7E44 /* AuthPlugin.swift in Sources */,
 				F7C3995F2A3A0A1B00AF7E44 /* AuthService.swift in Sources */,
 				F7C399512A38C43E00AF7E44 /* SearchRepoListViewController.swift in Sources */,
+				F7C3997B2A3DF57700AF7E44 /* UIViewPreview.swift in Sources */,
 				F7C399562A38D39600AF7E44 /* NetworkProvider.swift in Sources */,
 				F7C399612A3A0A1B00AF7E44 /* AccessToken.swift in Sources */,
 			);
@@ -703,6 +715,14 @@
 				version = 20.0.0;
 			};
 		};
+		F7C399772A3DF2CD00AF7E44 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -725,6 +745,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F7C399652A3A0BBC00AF7E44 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		F7C399782A3DF2CD00AF7E44 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C399772A3DF2CD00AF7E44 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

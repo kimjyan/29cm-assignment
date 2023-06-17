@@ -177,3 +177,17 @@ final class ProfileHeaderView: UIView {
     }
 }
 
+// MARK: Preview
+
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+
+struct ProfileHeaderViewPreview: PreviewProvider{
+    static var previews: some View {
+        UIViewPreview {
+            let view = ProfileHeaderView()
+            return view
+        }.previewLayout(.sizeThatFits)
+    }
+}
+#endif
