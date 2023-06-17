@@ -11,10 +11,10 @@ import RxSwift
 
 final class NetworkProvider<Target: TargetType>: MoyaProvider<Target> {
     init(plugins: [PluginType] = []) {
-        let sessionManager = MoyaProvider<Target>.defaultAlamofireManager()
-        sessionManager.session.configuration.timeoutIntervalForRequest = 10
+        let session = MoyaProvider<Target>.defaultAlamofireSession()
+        session.sessionConfiguration.timeoutIntervalForRequest = 10
         
-        super.init(manager: sessionManager, plugins: plugins)
+        super.init(session: session)
     }
     
     func request(

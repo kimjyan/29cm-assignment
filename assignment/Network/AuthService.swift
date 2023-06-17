@@ -17,17 +17,17 @@ import KeychainSwift
 
 protocol AuthServiceType {
     var currentAccessToken: AccessToken? { get }
-
+    
     /// Start OAuth authorization process.
     ///
     /// - returns: An Observable of `AccessToken` instance.
     func authorize() -> Observable<Void>
-
+    
     /// Call this method when redirected from OAuth process to request access token.
     ///
     /// - parameter code: `code` from redirected url.
     func callback(code: String)
-
+    
     func logout()
 }
 
@@ -93,7 +93,7 @@ final class AuthService: AuthServiceType {
         
         return Single.create { observer in
             let headers: HTTPHeaders = ["Accept": "application/json"]
-            let request = Alamofire
+            let request = AF
                 .request(urlString, method: .post, parameters: parameters, headers: headers)
                 .responseData { response in
                     switch response.result {
@@ -102,10 +102,10 @@ final class AuthService: AuthServiceType {
                             let accessToken = try JSONDecoder().decode(AccessToken.self, from: jsonData)
                             observer(.success(accessToken))
                         } catch let error {
-                            observer(.error(error))
+                            observer(.failure(error))
                         }
                     case let .failure(error):
-                        observer(.error(error))
+                        observer(.failure(error))
                     }
                 }
             return Disposables.create {
