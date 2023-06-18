@@ -9,7 +9,9 @@ import Foundation
 import Moya
 
 enum GitAPI {
+    /// user
     case authenticatedUser
+    case userStarredRepos(owners: String, parameters: [String: Any])
 }
 
 extension GitAPI: Moya.TargetType {
@@ -21,11 +23,17 @@ extension GitAPI: Moya.TargetType {
         switch self {
         case .authenticatedUser:
             return "/user"
+        case .userStarredRepos(let owners, _):
+            return "/users/\(owners)/starred"
         }
     }
     
     var method: Moya.Method {
-        return .get
+        switch self {
+        case .authenticatedUser,
+                .userStarredRepos:
+            return .get
+        }
     }
     
     var sampleData: Data {
@@ -33,7 +41,12 @@ extension GitAPI: Moya.TargetType {
     }
     
     var task: Moya.Task {
-        return .requestPlain
+        switch self {
+        case .authenticatedUser:
+            return .requestPlain
+        case .userStarredRepos(_, let parameters):
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+        }
     }
     
     var headers: [String : String]? {
