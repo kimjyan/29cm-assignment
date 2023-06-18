@@ -12,6 +12,8 @@ public enum GitHubAPI {
     /// user
     case authenticatedUser
     case userStarredRepos(owners: String, parameters: [String: Any])
+    // search
+    case search(parameters: [String: Any])
 }
 
 extension GitHubAPI: Moya.TargetType {
@@ -25,13 +27,16 @@ extension GitHubAPI: Moya.TargetType {
             return "/user"
         case .userStarredRepos(let owners, _):
             return "/users/\(owners)/starred"
+        case .search:
+            return "/search/repositories"
         }
     }
     
     public var method: Moya.Method {
         switch self {
         case .authenticatedUser,
-                .userStarredRepos:
+                .userStarredRepos,
+                .search:
             return .get
         }
     }
@@ -45,6 +50,8 @@ extension GitHubAPI: Moya.TargetType {
         case .authenticatedUser:
             return .requestPlain
         case .userStarredRepos(_, let parameters):
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+        case .search(let parameters):
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }
