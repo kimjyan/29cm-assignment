@@ -16,6 +16,18 @@ public final class MainTabBarViewController: UITabBarController {
     private let disposeBag = DisposeBag()
     private let authService = coreContainer.resolve(AuthServiceType.self)!
     
+    private let loginBarButton: UIBarButtonItem = {
+        let item = UIBarButtonItem()
+        item.title = "로그인"
+        return item
+    }()
+    
+    private let logoutBarButton: UIBarButtonItem = {
+        let item = UIBarButtonItem()
+        item.title = "로그아웃"
+        return item
+    }()
+    
     public init() {
         super.init(nibName: nil, bundle: nil)
 
@@ -24,7 +36,8 @@ public final class MainTabBarViewController: UITabBarController {
             makeGitHubProfileViewController()
         ]
 
-        self.viewControllers = viewControllers.map { UINavigationController(rootViewController: $0) }
+        self.viewControllers = viewControllers
+        title = "GitHub"
     }
     
     public override func viewDidLoad() {
@@ -33,6 +46,11 @@ public final class MainTabBarViewController: UITabBarController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if authService.currentAccessToken == nil {
+            navigationItem.rightBarButtonItem = loginBarButton
+        } else {
+            navigationItem.rightBarButtonItem = logoutBarButton
+        }
     }
     
     required init?(coder: NSCoder) {
