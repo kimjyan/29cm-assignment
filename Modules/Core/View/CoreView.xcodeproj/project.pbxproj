@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -158,8 +158,6 @@
 		CBD3FC75C9828C022EC7441F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 091915FCE8209978B2033E40 /* Build configuration list for PBXProject "CoreView" */;
 			compatibilityVersion = "Xcode 13.0";

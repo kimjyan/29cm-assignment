@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		B0EFAB193CCE650F74BB6D8E /* Dependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91641BB7D43E9D87B63D0AA3 /* Dependency.framework */; platformFilter = ios; };
 		B45D096729B29F47AF458CC0 /* CoreNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5060143603CF1750ED027792 /* CoreNetwork.framework */; platformFilter = ios; };
 		E5BB64CF4A799979E15ECC03 /* CoreView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE77A145D5CE2AF70AB9E931 /* CoreView.framework */; platformFilter = ios; };
+		F7EEF8852A3F3EDA00AFBB6E /* SearchRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EEF8842A3F3EDA00AFBB6E /* SearchRepoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +37,7 @@
 		91641BB7D43E9D87B63D0AA3 /* Dependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60D92B9A3D512AA7AAF1B09 /* GitHubSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearch.swift; sourceTree = "<group>"; };
 		D1CBB3CB8DB31DF0F2A0DA31 /* GitHubSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GitHubSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7EEF8842A3F3EDA00AFBB6E /* SearchRepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoCell.swift; sourceTree = "<group>"; };
 		FE77A145D5CE2AF70AB9E931 /* CoreView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 		AE700821C604EF9DA28F71EE /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				F7EEF8832A3F3EBD00AFBB6E /* View */,
 				2E120961BCEB27D0AC2BEFB5 /* GitHubSearchViewController.swift */,
 			);
 			path = Search;
@@ -114,6 +117,14 @@
 				18AC43EAC75CD3436CA9E567 /* GitHubSearch-Info.plist */,
 			);
 			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		F7EEF8832A3F3EBD00AFBB6E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F7EEF8842A3F3EDA00AFBB6E /* SearchRepoCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F825D1054FD952E1ABBE6668 /* Project */ = {
@@ -159,8 +170,6 @@
 		511EC4E9553C8463973127B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 7EAE6E82BF01AE9CBAD4D47E /* Build configuration list for PBXProject "GitHubSearch" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -197,6 +206,7 @@
 			files = (
 				AF6C5757C88621FC5F10454A /* GitHubSearch.swift in Sources */,
 				2E8F61622FF159653EE7476D /* GitHubSearchViewController.swift in Sources */,
+				F7EEF8852A3F3EDA00AFBB6E /* SearchRepoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
