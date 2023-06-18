@@ -14,7 +14,7 @@ final class NetworkProvider<Target: TargetType>: MoyaProvider<Target> {
         let session = MoyaProvider<Target>.defaultAlamofireSession()
         session.sessionConfiguration.timeoutIntervalForRequest = 10
         
-        super.init(session: session)
+        super.init(session: session, plugins: plugins)
     }
     
     func request(
