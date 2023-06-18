@@ -67,6 +67,13 @@ public final class GitHubSearchViewController: UIViewController, View {
     }
     
     public func bind(reactor: GitHubSearchReactor) {
+        searchBar.rx.text.orEmpty
+            .skip(1)
+            .debounce(.milliseconds(200), scheduler: MainScheduler.instance)
+            .map { Reactor.Action.search($0) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         reactor.state
             .map(\.sections)
             .bind(to: searchResultCollectionView.rx.items(dataSource: dataSource))

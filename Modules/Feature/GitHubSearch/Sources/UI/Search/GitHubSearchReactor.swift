@@ -42,8 +42,8 @@ public final class GitHubSearchReactor: Reactor {
     
     public func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case .search:
-            return .just(.setItems([]))
+        case .search(let query):
+            return mutationSearch(query: query)
         case .setStar:
             return .just(.setStar(false, id: 0))
         }
@@ -60,5 +60,26 @@ public final class GitHubSearchReactor: Reactor {
             break
         }
         return state
+    }
+}
+
+extension GitHubSearchReactor {
+    func mutationSearch(query: String) -> Observable<Mutation> {
+        return network.request(.search(parameters: ["q": query]))
+            .map([GitHubRepoItem].self)
+            .asObservable()
+            .map { $0 }
+            .catchAndReturn([GitHubRepoItem]())
+            .flatMap { repo -> Observable<Mutation> in
+                if repo.isEmpty {
+                    return .of(
+                        .setViewState(.empty)
+                    )
+                } else {
+                    return .of(
+                        .setItems(repo)
+                    )
+                }
+            }
     }
 }
