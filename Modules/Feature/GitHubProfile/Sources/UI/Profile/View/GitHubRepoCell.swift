@@ -8,18 +8,17 @@
 import UIKit
 import SnapKit
 import CoreView
+import CoreNetwork
 
 final class GitHubRepoCell: UICollectionViewCell {
     private let imageView: UIImageView = {
         let view = UIImageView()
-        view.layer.cornerRadius = 30
         view.layer.masksToBounds = true
         return view
     }()
     
     private let ownerNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "owner name"
         label.font = .systemFont(ofSize: 15, weight: .regular)
         label.textColor = .gray29cm
         return label
@@ -27,7 +26,6 @@ final class GitHubRepoCell: UICollectionViewCell {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "name"
         label.font = .systemFont(ofSize: 17, weight: .bold)
         label.textColor = .black29cm
         return label
@@ -35,24 +33,27 @@ final class GitHubRepoCell: UICollectionViewCell {
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription"
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.textColor = .gray29cm
         return label
     }()
     
-    private let starButton = StarButton()
+    private let starButton: StarButton = {
+        let button = StarButton()
+        button.isSelected = true
+        return button
+    }()
     
     private let starImageView: UIImageView = {
         let view = UIImageView()
-        view.layer.cornerRadius = 30
-        view.layer.masksToBounds = true
+        view.image = UIImage(systemName: "star")
+        view.tintColor = .gray29cm
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
     private let starCountLabel: UILabel = {
         let label = UILabel()
-        label.text = "20,000"
         label.font = .systemFont(ofSize: 13, weight: .regular)
         label.textColor = .gray29cm
         return label
@@ -69,6 +70,9 @@ final class GitHubRepoCell: UICollectionViewCell {
     }
     
     private func setUpView() {
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.black29cm.cgColor
+        contentView.layer.cornerRadius = 20
         contentView.addSubview(imageView)
         contentView.addSubview(ownerNameLabel)
         contentView.addSubview(nameLabel)
@@ -116,5 +120,15 @@ final class GitHubRepoCell: UICollectionViewCell {
             make.centerY.equalTo(starImageView)
             make.leading.equalTo(starImageView.snp.trailing).offset(4)
         }
+    }
+    
+    func configure(with item: GitHubRepoItem) {
+        if let url = URL(string: item.owner.avatarURL) {
+            imageView.kf.setImage(with: url)
+        }
+        ownerNameLabel.text = item.owner.name
+        nameLabel.text = item.name
+        descriptionLabel.text = item.description
+        starCountLabel.text = String(item.starredCount)
     }
 }

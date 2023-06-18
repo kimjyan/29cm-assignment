@@ -15,20 +15,27 @@ public struct GitHubRepos: Codable {
 // MARK: - ReposItem
 public struct GitHubRepoItem: Codable {
     public let id: Int
-    public let fullName: String
+    public let name: String
     public let description: String?
-    public let topics: [String]
-    public let star: Int
-    public let fork: Int
-    public let language: String?
-    public let updatedAt: String
+    public let starredCount: Int
+    public let owner: Owner
     
     private enum CodingKeys: String, CodingKey {
-        case id, description, topics, language
-        case fullName = "full_name"
-        case star = "stargazers_count"
-        case fork = "forks_count"
-        case updatedAt = "updated_at"
+        case id
+        case name = "full_name"
+        case description
+        case starredCount = "stargazers_count"
+        case owner
+    }
+}
+
+public struct Owner: Codable {
+    public let name: String
+    public let avatarURL: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case name = "login"
+        case avatarURL = "avatar_url"
     }
 }
 

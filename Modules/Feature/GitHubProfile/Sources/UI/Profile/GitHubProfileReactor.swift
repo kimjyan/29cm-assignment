@@ -16,7 +16,7 @@ public final class GitHubProfileReactor: Reactor {
     
     public enum Action {
         case initial
-
+        case loadStarredRepo
         case setStar(Bool, id: Int)
     }
     
@@ -47,6 +47,8 @@ public final class GitHubProfileReactor: Reactor {
         switch action {
         case .initial:
             return mutateInitial()
+        case .loadStarredRepo:
+            return mutateLoadNext()
         case .setStar:
             return .just(.setStar(false, id: 0))
         }
@@ -57,10 +59,11 @@ public final class GitHubProfileReactor: Reactor {
         switch mutation {
         case .setUser(let user):
             state.user = user
-        case .setViewState(_):
-            break
-        case .setItems(_):
-            break
+            action.onNext(.loadStarredRepo)
+        case .setViewState(let viewState):
+            state.viewState = viewState
+        case .setItems(let items):
+            state.sections = [ProfileSection(items: items)]
         case .setStar(_, id: let id):
             break
         }
@@ -93,9 +96,22 @@ private extension GitHubProfileReactor {
         guard let user = currentState.user else { return .empty() }
         let page = currentState.page
 
-        network.request(.userStarredRepos(owners: user.login, parameters: ["page": page]))
-            .map(GitHubRepos.self)
-
-        return .empty()
+        return network.request(.userStarredRepos(owners: user.login,
+                                          parameters: ["page": page]))
+            .map([GitHubRepoItem].self)
+            .asObservable()
+            .map { $0 }
+            .catchAndReturn([GitHubRepoItem]())
+            .flatMap { repo -> Observable<Mutation> in
+                if repo.isEmpty {
+                    return .of(
+                        .setViewState(.empty)
+                    )
+                } else {
+                    return .of(
+                        .setItems(repo)
+                    )
+                }
+            }
     }
 }
