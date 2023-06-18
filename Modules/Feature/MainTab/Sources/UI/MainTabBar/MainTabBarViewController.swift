@@ -40,7 +40,8 @@ public final class MainTabBarViewController: UITabBarController {
     }
 
     private func makeGitHubSearchViewController() -> UIViewController {
-        GitHubSearchViewController()
+        let reactor = GitHubSearchReactor()
+        return GitHubSearchViewController(reactor: reactor)
     }
 
     private func makeGitHubProfileViewController() -> UIViewController {

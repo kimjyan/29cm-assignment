@@ -15,6 +15,7 @@
 		E5BB64CF4A799979E15ECC03 /* CoreView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE77A145D5CE2AF70AB9E931 /* CoreView.framework */; platformFilter = ios; };
 		F7EEF8852A3F3EDA00AFBB6E /* SearchRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EEF8842A3F3EDA00AFBB6E /* SearchRepoCell.swift */; };
 		F7EEF88B2A3F406300AFBB6E /* SearchRepoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EEF88A2A3F406300AFBB6E /* SearchRepoSection.swift */; };
+		F7EEF88D2A3F410A00AFBB6E /* GitHubSearchReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EEF88C2A3F410A00AFBB6E /* GitHubSearchReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,7 @@
 		D1CBB3CB8DB31DF0F2A0DA31 /* GitHubSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GitHubSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7EEF8842A3F3EDA00AFBB6E /* SearchRepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoCell.swift; sourceTree = "<group>"; };
 		F7EEF88A2A3F406300AFBB6E /* SearchRepoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoSection.swift; sourceTree = "<group>"; };
+		F7EEF88C2A3F410A00AFBB6E /* GitHubSearchReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchReactor.swift; sourceTree = "<group>"; };
 		FE77A145D5CE2AF70AB9E931 /* CoreView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 			children = (
 				F7EEF8832A3F3EBD00AFBB6E /* View */,
 				2E120961BCEB27D0AC2BEFB5 /* GitHubSearchViewController.swift */,
+				F7EEF88C2A3F410A00AFBB6E /* GitHubSearchReactor.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				2E8F61622FF159653EE7476D /* GitHubSearchViewController.swift in Sources */,
 				F7EEF8852A3F3EDA00AFBB6E /* SearchRepoCell.swift in Sources */,
 				F7EEF88B2A3F406300AFBB6E /* SearchRepoSection.swift in Sources */,
+				F7EEF88D2A3F410A00AFBB6E /* GitHubSearchReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import ReactorKit
 import RxSwift
 import RxDataSources
 import CoreNetwork
 import CoreContainer
 
-public final class GitHubSearchViewController: UIViewController {
-    private let disposeBag = DisposeBag()
+public final class GitHubSearchViewController: UIViewController, View {
+    public typealias Reactor = GitHubSearchReactor
+    
+    public var disposeBag = DisposeBag()
     private let authService = coreContainer.resolve(AuthServiceType.self)!
     
     private struct Constants {
@@ -30,7 +33,11 @@ public final class GitHubSearchViewController: UIViewController {
         return collectionView
     }()
     
-    public init() {
+    private let dataSource: RxCollectionViewSectionedReloadDataSource<SearchRepoSection>
+    
+    public init(reactor: Reactor) {
+        defer { self.reactor = reactor}
+        dataSource = type(of: self).dataSourceFactory()
         super.init(nibName: nil, bundle: nil)
         title = "List"
         view.backgroundColor = .white
@@ -57,6 +64,13 @@ public final class GitHubSearchViewController: UIViewController {
     
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func bind(reactor: GitHubSearchReactor) {
+        reactor.state
+            .map(\.sections)
+            .bind(to: searchResultCollectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
     }
     
     private func setUpView() {
