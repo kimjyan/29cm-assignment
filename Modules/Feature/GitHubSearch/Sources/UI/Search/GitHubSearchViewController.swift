@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxDataSources
 import CoreNetwork
 import CoreContainer
 
@@ -33,6 +34,15 @@ public final class GitHubSearchViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         title = "List"
         view.backgroundColor = .white
+    }
+    
+    private static func dataSourceFactory() -> RxCollectionViewSectionedReloadDataSource<SearchRepoSection> {
+        return .init(configureCell: { dataSource, collecvionView, indexPath, item in
+            let cell = collecvionView.dequeueReusableCell(withReuseIdentifier: Constants.repoCellIdentifier, for: indexPath) as? SearchRepoCell
+            guard let cell = cell else { return UICollectionViewCell() }
+            cell.configure(with: item)
+            return cell
+        })
     }
     
     public override func viewDidLoad() {
