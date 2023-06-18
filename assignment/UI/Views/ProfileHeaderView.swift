@@ -175,6 +175,16 @@ final class ProfileHeaderView: UIView {
             make.bottom.equalToSuperview().inset(16)
         }
     }
+    
+    func configure(with user: AuthenicatedUser) {
+        idLabel.text = user.login
+        nameLabel.text = user.name
+        emailLabel.text = user.email
+        companyLabel.text = user.company
+        locationLabel.text = user.location
+        followerCountLabel.text = String(user.followers)
+        followingCountLabel.text = String(user.following)
+    }
 }
 
 // MARK: Preview
