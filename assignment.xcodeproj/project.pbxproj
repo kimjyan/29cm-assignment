@@ -34,6 +34,14 @@
 		F7C3998C2A3DF92900AF7E44 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7C3998B2A3DF92900AF7E44 /* KeychainSwift */; };
 		F7C399942A3E063700AF7E44 /* StarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C399932A3E063700AF7E44 /* StarButton.swift */; };
 		F7C399972A3E06C500AF7E44 /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C399962A3E06C500AF7E44 /* RepoCell.swift */; };
+		F7C399992A3E108B00AF7E44 /* ProfileReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C399982A3E108B00AF7E44 /* ProfileReactor.swift */; };
+		F7C3999C2A3E21C100AF7E44 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F7C3999B2A3E21C100AF7E44 /* RxCocoa */; };
+		F7C3999E2A3E21C100AF7E44 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = F7C3999D2A3E21C100AF7E44 /* RxRelay */; };
+		F7C399A02A3E21C100AF7E44 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7C3999F2A3E21C100AF7E44 /* RxSwift */; };
+		F7C399A32A3ECD0100AF7E44 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = F7C399A22A3ECD0100AF7E44 /* RxDataSources */; };
+		F7C399A52A3ECEDB00AF7E44 /* RepoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C399A42A3ECEDB00AF7E44 /* RepoItem.swift */; };
+		F7C399AA2A3ED69C00AF7E44 /* ProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C399A92A3ED69C00AF7E44 /* ProfileSection.swift */; };
+		F7C399AD2A3EE3B300AF7E44 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F7C399AC2A3EE3B300AF7E44 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +87,9 @@
 		F7C3997A2A3DF57700AF7E44 /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
 		F7C399932A3E063700AF7E44 /* StarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarButton.swift; sourceTree = "<group>"; };
 		F7C399962A3E06C500AF7E44 /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
+		F7C399982A3E108B00AF7E44 /* ProfileReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileReactor.swift; sourceTree = "<group>"; };
+		F7C399A42A3ECEDB00AF7E44 /* RepoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItem.swift; sourceTree = "<group>"; };
+		F7C399A92A3ED69C00AF7E44 /* ProfileSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +97,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C399A02A3E21C100AF7E44 /* RxSwift in Frameworks */,
 				F7C3998C2A3DF92900AF7E44 /* KeychainSwift in Frameworks */,
 				F7C399892A3DF90B00AF7E44 /* RxMoya in Frameworks */,
+				F7C399A32A3ECD0100AF7E44 /* RxDataSources in Frameworks */,
 				F7C3997E2A3DF89A00AF7E44 /* ReactorKit in Frameworks */,
+				F7C3999C2A3E21C100AF7E44 /* RxCocoa in Frameworks */,
 				F7C399842A3DF8BF00AF7E44 /* URLNavigator in Frameworks */,
 				F7C399872A3DF90B00AF7E44 /* Moya in Frameworks */,
+				F7C399AD2A3EE3B300AF7E44 /* Kingfisher in Frameworks */,
+				F7C3999E2A3E21C100AF7E44 /* RxRelay in Frameworks */,
 				F7C399812A3DF8A800AF7E44 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +151,7 @@
 		F70EBB152A38BDBB00F83BE0 /* assignment */ = {
 			isa = PBXGroup;
 			children = (
+				F7C399A62A3ED65500AF7E44 /* Sections */,
 				F7C399702A3DC56E00AF7E44 /* UI */,
 				F7C3996F2A3DC52200AF7E44 /* Network */,
 				F70EBB162A38BDBB00F83BE0 /* AppDelegate.swift */,
@@ -172,6 +189,7 @@
 				F7C3995C2A3A0A1B00AF7E44 /* AuthService.swift */,
 				F7C399682A3A223000AF7E44 /* GitAPI.swift */,
 				F7C3996A2A3A25A100AF7E44 /* AuthenicatedUser.swift */,
+				F7C399A42A3ECEDB00AF7E44 /* RepoItem.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -193,6 +211,7 @@
 				F7C3994E2A38C3F200AF7E44 /* MainTabBarViewController.swift */,
 				F7C399502A38C43E00AF7E44 /* SearchRepoListViewController.swift */,
 				F7C399522A38C47100AF7E44 /* ProfileViewController.swift */,
+				F7C399982A3E108B00AF7E44 /* ProfileReactor.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -205,6 +224,14 @@
 				F7C399962A3E06C500AF7E44 /* RepoCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F7C399A62A3ED65500AF7E44 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				F7C399A92A3ED69C00AF7E44 /* ProfileSection.swift */,
+			);
+			path = Sections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +257,11 @@
 				F7C399862A3DF90B00AF7E44 /* Moya */,
 				F7C399882A3DF90B00AF7E44 /* RxMoya */,
 				F7C3998B2A3DF92900AF7E44 /* KeychainSwift */,
+				F7C3999B2A3E21C100AF7E44 /* RxCocoa */,
+				F7C3999D2A3E21C100AF7E44 /* RxRelay */,
+				F7C3999F2A3E21C100AF7E44 /* RxSwift */,
+				F7C399A22A3ECD0100AF7E44 /* RxDataSources */,
+				F7C399AC2A3EE3B300AF7E44 /* Kingfisher */,
 			);
 			productName = assignment;
 			productReference = F70EBB132A38BDBB00F83BE0 /* assignment.app */;
@@ -309,6 +341,9 @@
 				F7C399822A3DF8BF00AF7E44 /* XCRemoteSwiftPackageReference "URLNavigator" */,
 				F7C399852A3DF90B00AF7E44 /* XCRemoteSwiftPackageReference "Moya" */,
 				F7C3998A2A3DF92900AF7E44 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				F7C3999A2A3E21C100AF7E44 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				F7C399A12A3ECD0100AF7E44 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				F7C399AB2A3EE3B300AF7E44 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = F70EBB142A38BDBB00F83BE0 /* Products */;
 			projectDirPath = "";
@@ -354,6 +389,7 @@
 			files = (
 				F70EBB172A38BDBB00F83BE0 /* AppDelegate.swift in Sources */,
 				F7C399942A3E063700AF7E44 /* StarButton.swift in Sources */,
+				F7C399A52A3ECEDB00AF7E44 /* RepoItem.swift in Sources */,
 				F7C399692A3A223000AF7E44 /* GitAPI.swift in Sources */,
 				F7C399602A3A0A1B00AF7E44 /* URLNavigationMap.swift in Sources */,
 				F7C3996B2A3A25A100AF7E44 /* AuthenicatedUser.swift in Sources */,
@@ -363,6 +399,8 @@
 				F7C399762A3DCC3A00AF7E44 /* ProfileHeaderView.swift in Sources */,
 				F7C399722A3DC57D00AF7E44 /* UIColor + 29cm.swift in Sources */,
 				F7C3996D2A3A268200AF7E44 /* AuthPlugin.swift in Sources */,
+				F7C399992A3E108B00AF7E44 /* ProfileReactor.swift in Sources */,
+				F7C399AA2A3ED69C00AF7E44 /* ProfileSection.swift in Sources */,
 				F7C3995F2A3A0A1B00AF7E44 /* AuthService.swift in Sources */,
 				F7C399512A38C43E00AF7E44 /* SearchRepoListViewController.swift in Sources */,
 				F7C3997B2A3DF57700AF7E44 /* UIViewPreview.swift in Sources */,
@@ -743,6 +781,30 @@
 				minimumVersion = 20.0.0;
 			};
 		};
+		F7C3999A2A3E21C100AF7E44 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+		F7C399A12A3ECD0100AF7E44 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		F7C399AB2A3EE3B300AF7E44 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -775,6 +837,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F7C3998A2A3DF92900AF7E44 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		F7C3999B2A3E21C100AF7E44 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C3999A2A3E21C100AF7E44 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		F7C3999D2A3E21C100AF7E44 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C3999A2A3E21C100AF7E44 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		F7C3999F2A3E21C100AF7E44 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C3999A2A3E21C100AF7E44 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		F7C399A22A3ECD0100AF7E44 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C399A12A3ECD0100AF7E44 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+		F7C399AC2A3EE3B300AF7E44 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C399AB2A3EE3B300AF7E44 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
