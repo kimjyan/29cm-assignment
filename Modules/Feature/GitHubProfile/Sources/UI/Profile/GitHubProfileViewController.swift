@@ -51,7 +51,11 @@ public final class GitHubProfileViewController: UIViewController, View {
     }
 
     public func bind(reactor: GitHubProfileReactor) {
-
+        reactor.action.onNext(.initial)
+        reactor.state
+            .map(\.user)
+            .bind(to: profileHeaderView.rx.configure)
+            .disposed(by: disposeBag)
     }
     
     private func setUpView() {

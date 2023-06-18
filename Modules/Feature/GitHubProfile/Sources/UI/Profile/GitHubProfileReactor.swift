@@ -44,16 +44,26 @@ public final class GitHubProfileReactor: Reactor {
     public init() {}
     
     public func mutate(action: Action) -> Observable<Mutation> {
-//        switch action {
-//        case .initial:
-//            return mutateInitial()
-//        }
-        return .empty()
+        switch action {
+        case .initial:
+            return mutateInitial()
+        case .setStar:
+            return .just(.setStar(false, id: 0))
+        }
     }
     
     public func reduce(state: State, mutation: Mutation) -> State {
         var state = state
-
+        switch mutation {
+        case .setUser(let user):
+            state.user = user
+        case .setViewState(_):
+            break
+        case .setItems(_):
+            break
+        case .setStar(_, id: let id):
+            break
+        }
         return state
     }
 }

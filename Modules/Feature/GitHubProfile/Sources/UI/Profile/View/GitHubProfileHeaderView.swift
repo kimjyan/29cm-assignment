@@ -10,6 +10,7 @@ import SnapKit
 import Kingfisher
 import CoreNetwork
 import CoreView
+import RxSwift
 
 final class GitHubProfileHeaderView: UIView {
     private let avatarImageView: UIImageView = {
@@ -179,14 +180,24 @@ final class GitHubProfileHeaderView: UIView {
         }
     }
     
-    func configure(with user: AuthenticatedUser) {
-        avatarImageView.kf.setImage(with: URL(string: user.avatarURL)!)
-        idLabel.text = user.login
-        nameLabel.text = user.name
-        emailLabel.text = user.email
-        companyLabel.text = user.company
-        locationLabel.text = user.location
-        followerCountLabel.text = String(user.followers)
-        followingCountLabel.text = String(user.following)
+    func configure(with user: AuthenticatedUser?) {
+        if let url = URL(string: user?.avatarURL ?? "") {
+            avatarImageView.kf.setImage(with: url)
+        }
+        idLabel.text = user?.login
+        nameLabel.text = user?.name
+        emailLabel.text = user?.email
+        companyLabel.text = user?.company
+        locationLabel.text = user?.location
+        followerCountLabel.text = String(user?.followers ?? 0)
+        followingCountLabel.text = String(user?.following ?? 0)
+    }
+}
+
+extension Reactive where Base: GitHubProfileHeaderView {
+    var configure: Binder<AuthenticatedUser?> {
+        return Binder(self.base) { (base, value) in
+            base.configure(with: value)
+        }
     }
 }
