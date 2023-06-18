@@ -7,24 +7,15 @@
 
 import RxDataSources
 
-enum ProfileSection {
-    case starred([ProfileSectionItem])
+struct ProfileSection {
+    var items: [RepoItem]
 }
 
 extension ProfileSection: SectionModelType {
-    var items: [ProfileSectionItem] {
-        switch self {
-        case .starred(let items): return items
-        }
-    }
+    typealias Itme = RepoItem
     
-    init(original: ProfileSection, items: [ProfileSectionItem]) {
-        switch original {
-        case .starred: self = .starred(items)
-        }
+    init(original: ProfileSection, items: [RepoItem]) {
+        self = original
+        self.items = items
     }
-}
-
-enum ProfileSectionItem {
-    case starred([RepoItem])
 }
