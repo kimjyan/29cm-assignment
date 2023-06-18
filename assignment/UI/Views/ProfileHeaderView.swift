@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class ProfileHeaderView: UIView {
     private let avatarImageView: UIImageView = {
@@ -177,6 +178,7 @@ final class ProfileHeaderView: UIView {
     }
     
     func configure(with user: AuthenicatedUser) {
+        avatarImageView.kf.setImage(with: URL(string: user.avatarURL)!)
         idLabel.text = user.login
         nameLabel.text = user.name
         emailLabel.text = user.email
